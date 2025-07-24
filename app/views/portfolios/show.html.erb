@@ -1,0 +1,30 @@
+<h1>Portfolio Details</h1>
+<p>
+  <strong>Tittle:</strong>
+  <%= @portfolio.tittle %>
+</p>
+
+<p>
+  <strong>Subtittle:</strong>
+  <%= @portfolio.subtittle %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @portfolio.desc %>
+</p>
+
+<p>
+  <strong>Created At:</strong>
+  <%= @portfolio.created_at.strftime("%d %B %Y, %I:%M %p") %>
+</p>
+
+<p>
+  <strong>Last Updated:</strong>
+  <%= @portfolio.updated_at.strftime("%d %B %Y, %I:%M %p") %>
+</p>
+
+<hr>
+<%= link_to "Edit", edit_portfolio_path(@portfolio), class: "btn btn-primary" %>
+<%= link_to "Back to List", portfolios_path, class: "btn btn-secondary" %>
+<%= link_to "Delete", portfolio_path(@portfolio), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
